@@ -27,6 +27,7 @@ Das bedeutet das eine Variable die mit **let** deklariert(bestimmt) worden ist k
 
 Um nun eine Variable zu deklarieren muss man sich für einen Variablennamen entscheiden der am besten beschreibt was diese Variable enthalten soll. Wichtig dabei ist, dass der Variablenname kein Leerzeichen enhalten darf. Sollte man dennoch mehrere Wörter kombinieren wollen benutzt man das **Camel-Princip** was aussagt, dass das zweite Worte, welches hinter dem Leerzeichen wäre, groß geschrieben wird.
 
+### String
 Beispiel: **neuerBewohner**
 
 Um die Variable **neuerBewohner** zu deklarieren müssen wir nun in unser Codefeld und die deklaration beginnen (wichtig dabei ist es eine beendete Codezeile mit einem **;** zu beenden):
@@ -39,6 +40,7 @@ const neuerBewohner = "Neele";
 ```
 Der Wert der diese Variable jetzt bekommen hat haben wir in **" "** geschrieben um einen Textwert zu deklarieren. Diese Art von Textwert nennt man in Programmiersprache einen **String**. 
 
+### Number
 <p id="numbers">Es gibt noch viele andere Werte die wir in eine Variable packen könnten. Dazu gehören auch numerische Werte die man in der Programmiersprache **Number** nennt. Damit lassen sich Zahlen speichern, die man dann z.B für Rechen-Operationen benutzen kann. Um eine Variable mit einer **Number** zu deklarieren schreiben wir die Zahl ohne **" "** hinter das =. Siehe hier:</p>
 
 ```js
@@ -53,6 +55,7 @@ let anzahlFollower = 187;
 
 <br>
 
+### Boolean
 Auch kann man einen Wahrheitswert in einer Variable speichern. Diesen nennt man in der Programmiersprache einen **boolean** Wert. Auch diesen schreiben wir ohne **" "** hinter die Variable. Die 2 Möglichkeiten einen Wahrheitswert zu deklarieren sind:
 1. true
 2. false
