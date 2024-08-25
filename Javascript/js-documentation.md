@@ -69,7 +69,7 @@ oder
 const angemeldet = false;
 ```
 
-### Console.log()
+# Console.log()
 Um etwas in der Konsole ausgeben zu lassen (Beispielsweise Variablen) können wir den Befehl **console.log()** benutzen. 
 Hierzu schreiben wir in unser Codefeld **console.log()** und in die () einen **String** mit **" "**
 ```js
@@ -177,8 +177,32 @@ if (alter >= 18) {
 /* Würde den Code ausführen wenn das Alter größer oder gleich 18 ist */
 ```
 
+## Logische Operationen
+Logische Operationen werden benutzt um bestimmte Vergleiche und Bedingungen überprüfen zu können. Diese werden größtenteils mit einem **Boolean** verknüpft.
+Darunter fallen Operationen wie:
+### AND-Operator (&&)
+Ein **AND-Operator (&&)** hilft uns dabei zu überprüfen ob mehrere Bedingungen erfüllt sind. Nehmen wir z.B eine Glühbirne die mit einem Strom anschluss betrieben wird. Die Bedingungen die dabei entstehen wären dann zum einem **ob die Glühbirne am Strom angeschlossen ist** und zum anderen **ob die Glühbirne eingeschalten ist**. Nur wenn beide Bedingungen erfüllt sind ist die Glühbirne an.
+```js
+let anStromAngeschlossen = true;
+let eingeschalten = true;
+console.log(anStromAngeschlossen && eingeschalten); /* Gibt true aus, da beide Bedingungen erfüllt sind und somit geht die Glühbirne an */
+```
+```js
+let anStromAngeschlossen = true;
+let eingeschalten = false;
+console.log(anStromAngeschalten && eingeschalten); /* Gibt false aus, da nur eine der beiden Bedingunge erfüllt sind und somit geht die Glühbirne nicht an */
+```
+### OR-Operator (||)
+Ein **OR-Operator (||)** hilft uns dabei zu überprüfen ob mindestens eine der gegebenen Bedingunge erfüllt sind. Nehmen wir z.B einen Ventilator der sowohl mit Strom läuft als auch eine eigene Batterie hat. Die Bedingungen die dabei entstehen wären dann erstens **ob der Ventilator am Strom angeschlossen ist** oder zweitens **ob die Batterien im Ventilator geladen sind**. Ist eine von diesen beiden Bedingungen erfüllt geht der Ventilator an.
+```js
+let anStromAngeschlossen = false;
+let batterienGeladen = true;
+console.log(anStromAngeschlossen || batterienGeladen) /*  Gibt true aus, da eine der beiden Bedingungen erfüllt sind und somit der Ventilator läuft. */
+```
+Wenn beide Bedingungen nicht erfüllt wären, bedeutet das der Ventilator weder am Strom angeschlossen noch die Batterien geladen sind, dann würde false ausgegeben werden und der Ventilator würde aus bleiben.
+
 # Else-Anweisungen
-Wenn wir eine if-Anweisung mal nicht zutreffen sollte können wir eine Ausweichmethode verwenden um einen anderen Code ausführen zu lassen für den Fall, dass if-Anweisungen nicht erfüllt werden. Um also bei dem Alter Beispiel zu bleiben können wir dort eine else-Anweisung hinzuzufügen, für den Fall, dass das Alter kleiner als 18 ist.
+Wenn eine if-Anweisung mal nicht zutreffen sollte können wir eine Ausweichmethode verwenden um einen anderen Code ausführen zu lassen für den Fall, dass if-Anweisungen nicht erfüllt werden. Um also bei dem Alter Beispiel zu bleiben können wir dort eine else-Anweisung hinzuzufügen, für den Fall, dass das Alter kleiner als 18 ist.
 Dafür schreiben wir **else** hinter die die geschweifte Klammer die, die if-Anweisung schließt (also **}**). Die **else-Anweisung** muss daher IMMER am Ende stehen. Auch hier muss die Anweisung zwischen zwei geschweiften Klammern stehen ( **{}** )
 ```js
 let alter = 17
