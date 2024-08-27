@@ -252,4 +252,6 @@ function altersKontrolle() {
         console.log("Du darfst diesen Film noch nicht schauen, da du noch nicht 18 bist")
     }
 }
+
+altersKontrolle();
 ```
