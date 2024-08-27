@@ -216,7 +216,8 @@ if (alter >= 18) {
 ```
 
 # Else-If-Anweisungen
-Wir können abgesehen von if-Anweisungen und else-anweisungen auch else-if verwenden um eine weitere Bedinung hinzuzufügen. So können wir mehrere Fälle beachten und so mehr Möglichkeiten für den Code aufstellen. Wenn wir also 16 und 17 Jährige den Film schauen lassen wollen, wenn ein Elternteil zugestimmt hat, dann können wir das mit einer else-if-anweisungen tun.
+<p id="Ob-du-den-Film-schauen-darfst-oder-nicht-Beispiel">Wir können abgesehen von if-Anweisungen und else-anweisungen auch else-if verwenden um eine weitere Bedinung hinzuzufügen. So können wir mehrere Fälle beachten und so mehr Möglichkeiten für den Code aufstellen. Wenn wir also 16 und 17 Jährige den Film schauen lassen wollen, wenn ein Elternteil zugestimmt hat, dann können wir das mit einer else-if-anweisungen tun.</p>
+
 ```js
 let alter = 17
 let elternteilZugestimmt = true
@@ -228,4 +229,27 @@ if (alter >= 18) {
     console.log("Du darfst diesen Film noch nicht schauen, da du noch nicht 18 bist")
 }
 /* Hier würde der zweite Console.log() ausgegeben werden, da das Alter kleiner als 18 ist aber die Variable elternteilZugestimmt true ist
+```
+
+# Funktionen
+Manchmal gibt es Programme oder Websiten die bestimmte **Funktionen** immer wieder aufs neue Abrufen müssen. Um nicht jedes mal den selben Code für die selbe Funktion coden zu müssen gibt es in der Informatik etwas das sich **Funktionen** oder auch **Function** nennt. Ein bestimmter Codeblock wird dort in eine Funktion geschrieben die wir jederzeit überall im Code wieder abrufen können ohne das dieser Codeblock neu gecodet werden muss.
+
+Wenn wir also noch einmal das <a href="#Ob-du-den-Film-schauen-darfst-oder-nicht-Beispiel">"Ob du den Film schauen darfst oder nicht"-Beispiel</a> nehmen dann wollen wir diesen Codeblock jetzt in eine Funktion packen die wir immer wieder im Code abrufen können.
+Dafür muss erstmal der Name der Funktion festgelegt werden:
+```js
+function altersKontrolle()
+```
+Danach können wir den oben bereits geschriebenen Code in die Funktion hinzufügen und dann mit einem Abruf der Funktion den Code ausführen lassen:
+```js
+function altersKontrolle() {
+    let alter = 17
+    let elternteilZugestimmt = true
+    if (alter >= 18) {
+        console.log("Du darfst diesen Film schauen, da du 18 oder älter bist")
+    } else if (elternteilZugestimmt === true) {
+        console.log("Du darfst diesen Film schauen, da ein Elternteil zugestimmt hat")
+    } else {
+        console.log("Du darfst diesen Film noch nicht schauen, da du noch nicht 18 bist")
+    }
+}
 ```
