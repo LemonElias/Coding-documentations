@@ -36,3 +36,59 @@ var name //Erstellt eine Variable namens Name
 
 begin...
 ```
+Wichtig dabei ist, dass der Variablenname kein Leerzeichen enhalten darf. Sollte man dennoch mehrere Wörter kombinieren wollen benutzt man das **Camel-Princip** was aussagt, dass das zweite Worte, welches hinter dem Leerzeichen wäre, groß geschrieben wird.
+
+Dann gibt es noch verschiedene **Typen** von Variablen, die wir auch vorher im Kopf deklarieren müssen.
+
+### String
+Beispiel: **neuerBewohner**
+
+Um die Variable **neueBewohner** zu deklarieren müssen wir nun in unserer Kopf die Deklaration beginnen (wichtig dabei ist es eine beendete Codezeile mit einem **;** zu beenden):
+```pascal
+program String;
+var neuerBewohner: string; //Erstellt eine Variable namens neuerBewohner mit dem Variablen Typ String.
+
+begin...
+```
+Um dann dieser Variable einen Wert zuweisen zu können müssen wir dieses im Codefeld mit **:=** zwischen Variable und Wert machen.
+```pascal
+program String;
+var neuerBewohner: string; 
+
+begin
+    neuerBewohner := 'Neele';
+end.
+```
+Der Wert der diese Variable jetzt bekommen hat haben wir in **' '** geschrieben um einen Textwert zu deklarieren. Diese Art von Textwert nennt man in Programmiersprache einen **String**.
+
+<br>
+
+### Integer
+Es gibt noch viele andere Werte die wir in eine Variable packen könnten. Dazu gehören auch numerische Werte. Da gibt es z.B den **Integer** der alle Zahlen ohne Nachkommastellen umfasst. Damit lassen sich dann Rechen-Operationen durchführen.
+Um eine Variable mit einer **Integer** zu deklarieren schreiben wir die Zahl ohne **" "** hinter das :=.
+```pascal
+program Integer;
+var anzahlFollower: Integer; 
+
+begin
+    anzahlFollower := 187;
+end.
+```
+
+### Real
+Nun gibt es auch numerische Werte wo wir Nachkommastellen mit einbinden wollen. Dafür benutzen wir den Variablen Typ **Real** den wir genauso handhaben wie die **Integer**.
+```pascal
+program Real;
+var anzahlFollower: real; 
+
+begin
+    anzahlFollower := 187.69;
+end.
+```
+
+<p id="rechenoperationen">Nun gibt es bei numerischen Werten 4 Haupt Rechen-Operationen:</p>
+
+1. "+" - Addition
+2. "-" - Subtraktion 
+3. "*" - Multiplikation
+4. "div" - Division
