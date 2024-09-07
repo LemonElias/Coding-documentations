@@ -164,7 +164,7 @@ console.log(anStromAngeschlossen || batterienGeladen) /*  Gibt true aus, da eine
 Wenn beide Bedingungen nicht erfüllt wären, bedeutet das der Ventilator weder am Strom angeschlossen noch die Batterien geladen sind, dann würde false ausgegeben werden und der Ventilator würde aus bleiben.
 
 # If-Anweisungen
-If-Anweisungen überprüfen ob eine bestimmte Anforderung gegeben ist um den darin enthaltenen Code abzulesen. Um so eine Anweisung aufzustellen benötigen wir die **{}**. In diesen geschweiften Klammern geben wir den Code an der abgelesen wird wenn die Anforderung gegeben ist. Um eine Anforderung vorzugeben schreiben wir **if ()**. In die normalen Klammern kommt die Bedingung die erfüllt werden muss. 
+If-Anweisungen überprüfen ob eine bestimmte Anforderung gegeben ist um den darin enthaltenen Code abzulesen. Um so eine Anweisung aufzustellen benötigen wir die **{}**. In diesen geschweiften Klammern geben wir den Code an der abgelesen wird wenn die Anforderung gegeben ist. Um eine Anforderung vorzugeben schreiben wir **if ()**. In die normalen Klammern kommt die Bedingung die erfüllt werden muss.
 ```js
 if (true) {
     console.log("Bedingung erfüllt")
@@ -186,7 +186,8 @@ if (givenAnswer === correctAnswer) {
 }
 /* Würde "Das ist die richtige Antwort" in die Konsole schreiben wenn givenAnswer 15 wäre. Ansonsten passiert nichts.
 ```
-Andere Vergleichs-Operatoren die wir bei if-Anweisungen benutzen können wären:
+<p id="vergleichsoperatoren">Andere Vergleichs-Operatoren die wir bei if-Anweisungen benutzen können wären:</p>
+
 1. "!==" - ist ungleich
 2. ">=" - ist größer oder gleich 
 3. "<=" - ist kleiner oder gleich
@@ -254,4 +255,84 @@ function altersKontrolle() {
 }
 
 altersKontrolle();
+```
+
+# Schleifen
+Mit **Schleifen** lassen sich bestimmte Codeblocks und Programme wiederholen. Sie ermöglichen, Aufgaben zu automatisieren und komplexe Berechnungen und Abläufe effizient durchzuführen, ohne dieselben Anweisungen immer wieder von Hand schreiben zu müssen.
+
+## While-Schleife
+**While-Schleife** sind ideal, um Codeblöcke wiederholt auszuführen, solange eine bestimmte Bedingung wahr ist. Das ist besonders nützlich, wenn man die Anzahl der Wiederholungen im Voraus nicht weiß und eventuell abhängig von einer laufenden Berechnung sein kann.
+
+### While-Schleife öffnen
+Um eine **While-Schleife** zu öffnen schreiben wir **while ()**, wo die benötigte Bedingung in die Klammern kommt. Darauf hin folgt dann wie bei der <a href="#if-anweisungen">If-Anweisung</a> die geschweiften Klammern **{}**, worin der Code steht der wiederholt werden soll.
+```js
+while (/*Bedingung*/) {
+    /*Code*/
+};
+```
+
+Damit eine **While-Schleife** durchgeführt wird braucht es wie bei den <a href="#if-anweisungen">If-Anweisungen</a> eine Bedingung die erfüllt sein muss. Nehmen wir hier als erstes, dass wir die **Schleifenbedingung** erfüllt setzen (true).
+```js
+while (true) {
+    /*Code*/
+};
+```
+
+Nun können wir zu einer Schleife auch eine richtige **Schleifenbedingung** hinzufügen. Hierbei kommen wieder die <a href="#vergleichsoperatoren">Vergleichoperatoren</a> ins Spiel. So können wir z.B die **While-Schleife** nur ausführen machen wenn eine Variable den **Booleanwert** true hat.
+```js
+const schleife_genehmigt === true;
+while (schleife_genehmigt === true) {
+    /*Code*/
+};
+```
+
+### While-Schleife überspringen
+Um die **While-Schleife** überspringen zu können müssen wir einfach nur schauen, dass die Bedingung welche in den Klammern () gestellt ist **false** ausgibt.
+```js
+const schleife_genehmigt === false;
+while (schleife_genehmigt === true) {
+    /*Code*/
+};
+```
+Hier wird der komplette Code in der **While-Schleife** übersprungen, da die Variable "schleife_genehmigt" nicht dem Wert true entspricht.
+
+### While-Schleife stoppen
+Damit eine Schleife nicht unendlich oft bzw. unendlich lange Ausgeführt wird, haben wir die Möglichkeit die **While-Schleife** zu stoppen, indem wir die Bedingung die zuvor true war auf false zu setzen. Dadurch wird die Schleife gestoppt.
+```js
+const schleife_genehmigt === false;
+while (schleife_genehmigt === true) {
+    /*Code*/
+    schleife_genehmigt = false;
+};
+```
+In dieser Schleife hätte es nur einen Durchlauf gegeben, da die Variable "schleife_genehmigt" nach einem Durchlauf auf false gesetzt wird. 
+Um die Durchläufe kontrollieren zu können müssen wir eine andere Bedingung mit einem anderen <a href="vergleichoperatoren">Vergleichsoperator</a>. Oft im Development wird dafür ein sogenannter **Zähler** benutzt mit dem man die Anzahl der Durchläufe kontrollieren kann bis die **While-Schleife** gestoppt wird.
+```js
+let zaehler = 0;
+while (zaehler > 5) {
+    /*Code*/
+    zaehler = zaehler + 1;
+};
+```
+Die Schleife wird 5 mal ausgeführ, weil ab der 5. Wiederholung die Variable "zaehler" größer 5 ist und deswegen die Bedingung `zaehler >5` nicht mehr true ist.
+
+#### Inkrement-Operator
+Um das Verfahren mit dem Zähler weniger umständlich und mehr kompakt zu gestalten können wir den **Inkrement-Operator** benutzen. Dabei ersetzen wir `zaehler = zaehler +1` mit `zaehler++` .
+**++** hinter einer Variable mit Integer addiert zu diesem 1.
+```js
+let zaehler = 0;
+while (zaehler > 5) {
+    /*Code*/
+    zaehler++
+};
+```
+
+#### Dekrement-Operator
+Dieses Verfahren geht natürlich auch in die andere Richtung. Hier verwendet man den **Dekrement-Operator** der mit **--** hinter einer Variable mit Integer 1 subtrahiert.
+```js
+let zaehler = 5;
+while (zaehler > 0) {
+    /*Code*/
+    zaehler--
+};
 ```
