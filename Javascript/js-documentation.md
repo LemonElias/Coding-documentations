@@ -1,4 +1,4 @@
-# The Ultimate Javascript Documentation
+# The Ultimate Beginner Javascript Documentation
 
 #### Version:
 **Deutsch**
@@ -343,18 +343,81 @@ Der **Inkrement- und Dekrement-Operator** sind optimal um **For-Schleifen** zu r
 ### For-Schleife öffnen
 Um die **For-Schleife** zu öffnen schreiben wir **for ()** worin die **Zählervariable (oft i)**, die **Bedingung welchen Wert die Zählervariable erreichen darf** und die **Veränderung der Zählervariable** mithilfe des **Inkrement- oder Dekrement-Operators**. Wichtig dabei ist das die einzelnen Sachen mit **;** getrennt sind damit das Programm das auslesen kann.
 Siehe hier:
- ```js
- for (i = 10; i > 0; i--)
- ```
- Daraufhin folgt wie bei der <a href="#while-schleife-öffnen">While-Schleife</a> die geschweiften Klammern **{}** worin dann der Code kommt der die bestimmte Anzahl an Durchläufen durchlaufen werden soll.
-  ```js
- for (i = 10; i > 0; i--) {
+```js
+for (i = 10; i > 0; i--)
+```
+Daraufhin folgt wie bei der <a href="#while-schleife-öffnen">While-Schleife</a> die geschweiften Klammern **{}** worin dann der Code kommt der die bestimmte Anzahl an Durchläufen durchlaufen werden soll.
+```js
+for (i = 10; i > 0; i--) {
     print(i)
- }
- /* Die Schleife würde von 10 bis 1 runterzählen:
- 10
- 9
- 8
- 7
- ... */
- ```
+}
+/* Die Schleife würde von 10 bis 1 runterzählen:
+10
+9
+8
+7
+... */
+```
+
+# Array
+
+Ein Array ist eine Möglichkeit mehrere **Werte** (Strings, Zahlen, ..) in eine Variable zu packen. Das wird z.B benutzt wenn man alle Monate in die Variable "monate" stecken möchte und trotzdem noch auf jeden Monat selber zugreifen wollen würde. Dann können wir ein Array erstellen. Dieser wird erstellt mit den eckigen Klammern **[ ]**.
+```js
+ let monate = []
+```
+Nun können wir natürlich schon von Anfang an Monate mit reinschreiben. Wichtig hierbei ist das alle einzelnen Werte innerhalb des Arrays mit einem Komma getrennt sein müssen.
+```js
+ let monate = ["Februar", "März"]
+```
+
+So würde der Array jetzt Februar und März als Monate beinhalten. Jedes Element in einem Array hat einen bestimmten <span id="index">**Index**</span>, womit man später im Code auf die einzelnen Elemente zugreifen kann. Wichtig hierbei ist, dass das erste Element (hier: "Februar") den Index **0** hat und **NICHT** den Index **1**. Index **1** hat nämlich in dem Array das Element "März".
+
+---
+
+Um nun noch weitere Monate **hinzufügen** oder **entfernen** zu können benötigen wir bestimmte **Methoden** die es Javascript gibt. Um eine **Methode** anwenden zu können schreiben wir erst den **Arraynamen** dann einen Punkt **.** und dahinter die **Methode**.
+```js
+ arrayName.methode()
+```
+
+## Hinzufügen oder Entfernen von Werten in Arrays
+
+Wichtig ist, dass wenn wir ein Array bearbeiten wollen, muss es vorher mit **let** deklariert worden sein. Wie wir in <a href="#variablen">Variablen</a> gelernt haben lassen sich nur **let** Variablen **verändern**, während **const** Variablen **konstant** bleiben.
+
+Um nun ein Element zu dem Array hinzufügen zu können können wir 3 Methoden benutzen die im folgendem Abschnitt einmal erklärt werden.
+
+### Hinzufügen
+
+#### push()
+Mit **push()** können wir ein oder mehrere Elemente am **Ende** des Arrays hinzufügen. 
+```js
+ arrayNamen.push(/*Werte*/)
+```
+Wollen wir also z.B jetzt Dezember zu unseren Monaten hinzufügen können wir dafür die **push()** Methode verwenden.
+```js
+ let monate = ["Februar", "März"]
+ monate.push("Dezember")
+ /* Danach währe Monate ["Februar", "März", "Dezember"] */
+```
+---
+#### unshift()
+Mit **unshift()** können wir ein oder mehrere Elemente am **Anfang** des Arrays hinzufügen.
+```js
+ arrayNamen.unshift(/*Werte*/)
+```
+Da der Januar ja noch in unserem Array fehlt können wir diesen mit der **unshift()** Methode hinzufügen.
+```js
+ /* Monate ist ["Februar", "März", "Dezember"] */
+ monate.unshift("Januar")
+ /* Danach währe Monate ["Januar", "Februar", "März", "Dezember"] */
+```
+---
+#### splice()
+Mit **splice()** können wir ein oder mehrere Elemente an einer beliebigen Stelle im Array hinzufügen. Die Methode ist flexibler als **push()** und **unshift()** da **splice()** in der Theorie auch Elemente entfernen kann, was jetzt aber noch nicht wichtig ist.
+Dazu gibt es zu den Werten noch 2 weitere wichtige Attribute die wir in der Klammer **()** übergeben müssen. An erster Stelle kommt der <a href="#index">Index</a> ab welcher der neue Wert oder die neuen Werte eingefügt werden sollen. An zweiter Stelle kommt dann die Anzahl wie viele Elemente ab dem angegebenen Index entfernt werden sollen.
+
+So können wir dann jetzt vor den Dezember noch den November einfügen. November nimmt hier den Index **3** an.
+```js
+ /* Monate ist ["Januar", "Februar", "März", "Dezember"] */
+ monate.splice(3, 0, "November")
+ /* Danach währe Monate ["Januar", "Februar", "März", "November", "Dezember"] */
+```
