@@ -336,3 +336,25 @@ while (zaehler > 0) {
     zaehler--
 };
 ```
+
+## For-Schleife
+Der **Inkrement- und Dekrement-Operator** sind optimal um **For-Schleifen** zu regulieren. Mit diesen Schleifen lässt sich auf noch einfachere Art und Weise ein bestimmter Codeblock eine bestimmte Anzahl and Durchläufen durchlaufen.
+
+### For-Schleife öffnen
+Um die **For-Schleife** zu öffnen schreiben wir **for ()** worin die **Zählervariable (oft i)**, die **Bedingung welchen Wert die Zählervariable erreichen darf** und die **Veränderung der Zählervariable** mithilfe des **Inkrement- oder Dekrement-Operators**. Wichtig dabei ist das die einzelnen Sachen mit **;** getrennt sind damit das Programm das auslesen kann.
+Siehe hier:
+ ```js
+ for (i = 10; i > 0; i--)
+ ```
+ Daraufhin folgt wie bei der <a href="#while-schleife-öffnen">While-Schleife</a> die geschweiften Klammern **{}** worin dann der Code kommt der die bestimmte Anzahl an Durchläufen durchlaufen werden soll.
+  ```js
+ for (i = 10; i > 0; i--) {
+    print(i)
+ }
+ /* Die Schleife würde von 10 bis 1 runterzählen:
+ 10
+ 9
+ 8
+ 7
+ ... */
+ ```
