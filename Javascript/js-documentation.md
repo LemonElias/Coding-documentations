@@ -421,3 +421,40 @@ So können wir dann jetzt vor den Dezember noch den November einfügen. November
  monate.splice(3, 0, "November")
  /* Danach währe Monate ["Januar", "Februar", "März", "November", "Dezember"] */
 ```
+
+### Entfernen
+
+#### pop()
+Mit **pop()** lässt sich das letzte Element des Arrays entfernen und zurückgeben.
+```js
+ arrayNamen.pop()
+```
+
+Wollen wir also den Dezember beispielsweise entfernen so können wir einfach die **pop()** verwenden. Eine wichtige Sache dabei ist auch das sich der Dezember dann so lange in der Methode befindet bis der Code fortgeführt wird. So können wir diesen in Variablen oder in die Console packen.
+```js
+ /* Monate ist ["Januar", "Februar", "März", "November", "Dezember"] */
+ const letztermonat = monate.pop()
+ /* Danach währe Monate ["Januar", "Februar", "März", "November"] und "Dezember" währe in der Variable letztermonat */
+```
+
+---
+#### shift()
+Mit **shift()** können wir das erste Element des Arrays entfernen und auch wie bei **pop()** zurückgeben lassen.
+
+Also lass uns auch den ersten Monat entfernen aus dem Array und in eine Variable packen.
+```js
+ /* Monate ist ["Januar", "Februar", "März", "November"] */
+ const erstermonat = monate.shift()
+ /* Danach währe Monate ["Februar", "März", "November"] und "Januar" währe in der Variable erstermonat */
+```
+
+### Arrays zusammenfügen
+
+#### concat()
+
+Mit der Methode **concat()** können wir 2 Arrays miteinander verbinden ohne jedes einzelne Element mit push() und pop() entfernen und hinzufügen zu müssen.
+```js
+let array1 = [1, 2, 3];
+let array2 = [4, 5, 6];
+let combinedArray = array1.concat(array2); /* Ausgabe: [1, 2, 3, 4, 5, 6] */
+```
