@@ -256,6 +256,72 @@ function altersKontrolle() {
 
 altersKontrolle();
 ```
+## Lokale und Globale Variablen
+*coming soon*
+
+## Parameter 
+Außerdem haben wir auch die Möglichkeit einer Funktion direkt ein Wert für eine Variable zu übergeben. So können wir uns den Schritt sparen von Anfang an das Alter festzulegen, sondern können jedes mal wenn die Funktion aufgerufen wird ein anderes Alter angeben mit welchem dann der Codeblock durchgeführt wird.
+Dafür schreiben wir einfach in die Klammern welche Variable beim ausführen der Funktion übergeben werden soll.
+Die anzugebenen Werte innerhalb der Klammern nennt man **Parameter**.
+```js
+function altersKontrolle(alter) {};
+```
+Um dann einen Wert für die Variable "alter" zu übergeben schreiben wir einfach diesen in die Klammern beim ausführen der Funktion.
+```js
+altersKontrolle(17);
+```
+Der Code von oben könnte dann wie folgt aussehen:
+```js
+function altersKontrolle(alter) {
+    let elternteilZugestimmt = true
+    if (alter >= 18) {
+        console.log("Du darfst diesen Film schauen, da du 18 oder älter bist")
+    } else if (elternteilZugestimmt === true) {
+        console.log("Du darfst diesen Film schauen, da ein Elternteil zugestimmt hat")
+    } else {
+        console.log("Du darfst diesen Film noch nicht schauen, da du noch nicht 18 bist")
+    }
+}
+
+altersKontrolle(17); // alter hätte dann den Wert 17 als hätte man alter = 17 geschrieben
+```
+Das geht natürlich mit beliebig vielen Variablen innerhalb einer Funktion. So können wir auch die Variable "elternteilZugestimmt" in die Funktion als Parameter übergeben.
+Wichtig dabei ist, dass die einzelnen Parameter mit einem **Komma** getrennt sind.
+```js
+function altersKontrolle(alter,  elternteilZugestimmt) {
+    if (alter >= 18) {
+        console.log("Du darfst diesen Film schauen, da du 18 oder älter bist")
+    } else if (elternteilZugestimmt === true) {
+        console.log("Du darfst diesen Film schauen, da ein Elternteil zugestimmt hat")
+    } else {
+        console.log("Du darfst diesen Film noch nicht schauen, da du noch nicht 18 bist")
+    }
+}
+
+altersKontrolle(17, true); // elternteilZugestimmt hat dann den Wert "true"
+```
+
+## Return a Value
+Was man mit Funktionen machen kann ist mit den übergebenen Parametern arbeiten um im nachhinein einen neuen Wert ausgeben zu können. Dafür haben wir die Möglichkeit den neuen Wert innerhalb der Funktion zu speichern um damit weiter zu arbeiten. Dafür gibt es **return**.
+
+Wollen wir z.B mit einer Funktion 2 Zahlen miteinander addieren und dann ein einer neuen Variable speichern geht das nur mithilfe der **return** Anweisung.
+```js
+function addieren(a, b) {
+    const newNumber = a + b;
+    return newNumber;
+};
+```
+Die Funktion **addieren** enthält jetzt den Wert **a + b** in der Variable **newNumber**. Da Variablen innerhalb einer Funktion <a href="#lokale-und-globale-variablen">lokale Variablen</a> gespeichert sind und nicht außerhalb benutzt werden können, haben wir jetzt die Möglichkeit den übergeben Wert von **newNumber** von der Funktion in einer **globalen** (alles außerhalb einer Funktion) Variablen dank des **return**´s zu speichern.
+```js
+function addieren(a, b) {
+    const newNumber = a + b;
+    return newNumber;
+};
+
+const number1 = add(3, 6); // für a und b wird hier 3 und 6 eingesetzt
+
+console.log(number1); // Ausgabe wäre 9, da in der Funktion 3 + 6 (a + b) gerechnet wird.
+```
 
 # Schleifen
 Mit **Schleifen** lassen sich bestimmte Codeblocks und Programme wiederholen. Sie ermöglichen, Aufgaben zu automatisieren und komplexe Berechnungen und Abläufe effizient durchzuführen, ohne dieselben Anweisungen immer wieder von Hand schreiben zu müssen.
