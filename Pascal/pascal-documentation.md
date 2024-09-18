@@ -92,3 +92,18 @@ end.
 2. "-" - Subtraktion 
 3. "*" - Multiplikation
 4. "div" - Division
+
+
+### Boolean
+Man kann auch Aussagen wie "wahr" oder "falsch" in Pascal treffen und diese Aussagen Variablen zuweisen. Der Variablen Typ heißt **Boolean** und wird oft verwendet um bestimmte Interaktionen im Code auszuführen oder eben nicht.
+Das zuweisen sieht wie folgt aus:
+```pascal
+program Boolean;
+var istFertig: boolean;
+var istRichtig: boolean;
+
+begin
+    istFertig := true; // Weist die Aussage "Wahr", "istFertig" zu.
+    istRichtig := false; // Weist die Aussage "Falsch", istRichtig zu.
+end.
+```
