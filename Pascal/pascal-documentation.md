@@ -107,3 +107,37 @@ begin
     istRichtig := false; // Weist die Aussage "Falsch", istRichtig zu.
 end.
 ```
+
+# If-Anweisungen
+Mit **If-Anweisungen** können wir bestimmten Code nur ausführen wenn die gestellte Bedingung gegeben ist. Ansonsten wird der Code innerhalb der **If-Anweisung** übersprungen.
+```pascal
+program if-anweisungen;
+var istRichtig: boolean;
+
+begin 
+    istRichtig := false;
+
+    if istRichtig = false then
+        // Anweisung
+end.
+```
+So wird die **Anweisung** nur ausgeführt wenn die Variable "istRichtig" den Wert "Falsch" hat. 
+Für **If-Anweisungen** gibt es nebem dem **ist gleich (=)** Vergleich noch ein paar andere Vergleiche:
+
+1. "größer als" >
+2. "kleiner als" <
+3. "größer oder gleich als" >=
+4. "kleiner oder gleich als" <=
+
+Um ein weiteres Beispiel anzuführen, gäbe es z.B noch die Möglichkeit eine Variable mit einem Integer darauf zu vergleich ob der gegebene Integer kleiner ist als ein anderer Integer.
+```pascal
+program if-anweisung-mit-integer;
+var zahl: Integer;
+
+begin
+    zahl := 5
+
+    if zahl > 10 then
+        // Anweisung
+end.
+```
