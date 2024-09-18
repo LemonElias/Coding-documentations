@@ -280,7 +280,7 @@ while (true) {
 
 Nun können wir zu einer Schleife auch eine richtige **Schleifenbedingung** hinzufügen. Hierbei kommen wieder die <a href="#vergleichsoperatoren">Vergleichoperatoren</a> ins Spiel. So können wir z.B die **While-Schleife** nur ausführen machen wenn eine Variable den **Booleanwert** true hat.
 ```js
-const schleife_genehmigt === true;
+const schleife_genehmigt = true;
 while (schleife_genehmigt === true) {
     /*Code*/
 };
@@ -289,7 +289,7 @@ while (schleife_genehmigt === true) {
 ### While-Schleife überspringen
 Um die **While-Schleife** überspringen zu können müssen wir einfach nur schauen, dass die Bedingung welche in den Klammern () gestellt ist **false** ausgibt.
 ```js
-const schleife_genehmigt === false;
+const schleife_genehmigt = false;
 while (schleife_genehmigt === true) {
     /*Code*/
 };
@@ -299,7 +299,7 @@ Hier wird der komplette Code in der **While-Schleife** übersprungen, da die Var
 ### While-Schleife stoppen
 Damit eine Schleife nicht unendlich oft bzw. unendlich lange Ausgeführt wird, haben wir die Möglichkeit die **While-Schleife** zu stoppen, indem wir die Bedingung die zuvor true war auf false zu setzen. Dadurch wird die Schleife gestoppt.
 ```js
-const schleife_genehmigt === false;
+const schleife_genehmigt = true;
 while (schleife_genehmigt === true) {
     /*Code*/
     schleife_genehmigt = false;
