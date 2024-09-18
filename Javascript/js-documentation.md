@@ -257,7 +257,11 @@ function altersKontrolle() {
 altersKontrolle();
 ```
 ## Lokale und Globale Variablen
-*coming soon*
+**Globale Variablen** sind Variablen die im Code definiert werden und überall im Code abgerufen werden können. Diese werden mit **let** oder **const** definiert.
+
+**Lokale Variablen** sind Variablen die in Funktionen definiert werden und nur innerhalb der Funktion benutzt werden. Auch diese können mit **let** oder **const** definiert werden.
+
+Diese Aufteilung kann helfen doppelte Namensgebung zu vermeiden und den Code übersichtlicher zu machen.
 
 ## Parameter 
 Außerdem haben wir auch die Möglichkeit einer Funktion direkt ein Wert für eine Variable zu übergeben. So können wir uns den Schritt sparen von Anfang an das Alter festzulegen, sondern können jedes mal wenn die Funktion aufgerufen wird ein anderes Alter angeben mit welchem dann der Codeblock durchgeführt wird.
