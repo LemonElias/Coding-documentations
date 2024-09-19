@@ -528,3 +528,100 @@ let array1 = [1, 2, 3];
 let array2 = [4, 5, 6];
 let combinedArray = array1.concat(array2); /* Ausgabe: [1, 2, 3, 4, 5, 6] */
 ```
+
+# Objekte 
+Objekte sind ein wichtiger Teil der Objektorientierten Programmierung, da diese anders wie bei Variablen nicht nur einen bestimmten Wert speichern können sondern mehrere Daten aber auch bestimmte Funktionen eines Objektes speichern können. 
+
+So können wir uns z.B ein Auto im Code erstellen, welches verschiedene Daten wie "Typ", "Baujahr" und "gefahrene Kilometer" speichern kann, aber auch die Funktion "fahren" in sich hat.
+
+Fangen wir aber erstmal mit dem erstellen des Objektes an.
+Das fängt erst einmal so an wie das erstellen einer Variable, nur mit dem Unterschied, dass hinter dem **=** zwei geschweifte Klammern kommen **{}** die dann nachher die Daten und Funktionen beinhalten können.
+```js 
+const auto = {};
+```
+
+### Daten innerhalb eines Objektes
+Um jetzt Daten zu dem Objekt zuweisen zu können schreiben wir den Namen der Variable die diese Daten beinhalten soll und dann hinter einem Doppelpunkt den Wert dem wir der Variable zuweisen.
+```js
+const auto = {
+    typ: "SUV",
+    baujahr: "2004",
+    gefahreneKilometer: 400
+};
+```
+Interessannt und auch wichtig dabei ist, dass Variablen die innerhalb eines Objektes erstellt worden sind auch nur in Kombination mit dem Objekt abgerufen werden können. Getrennt gibt es diese Variablen im Code **nicht**.
+
+Um jetzt das Objekt mit den gesamten Ausgeben lassen zu können schreiben wir es in die Konsole.
+```js
+console.log(auto);
+``` 
+Dies würde dann die folgende Ausgabe erzeugen:
+```js
+// {typ: 'SUV', baujahr: '2004', gefahreneKilometer: 400}
+```
+
+Nun können wir auch auf einzelne Daten innerhalb eines Objektes zugreifen. Wie schon oben gesagt können wir die gewollte Variable nur mit dem Objekt zusammen aufrufen. Dafür schreiben wir **objektname.variablennamen** z.B:
+```js
+console.log(auto.typ);
+```
+Dies würde dann die folgende Ausgabe erzeugen:
+```js
+// SUV
+```
+
+Jetzt haben wir natürlich auch die Möglichkeit die Daten die innerhalb eines Objektes sind zu ändern. Das handhaben wir genauso wie bei einer Variable, nur mit dem Unterschied, dass wir auch hier die Variable zusammen mit dem Objekt angeben müssen.
+Das würde dann so aussehen:
+```js
+auto.typ = "Kombi";
+```
+So würde das Objekt jetzt wie folgt aussehen:
+```js
+const auto = {
+    typ: "Kombi",
+    baujahr: "2004",
+    gefahreneKilometer: 400
+};
+```
+
+### Funktionen innerhalb eines Objektes
+Nicht nur Daten können wir innerhalb eines Objektes speichern, sondern auch Funktionen. Wir wollen schließlich auch, dass unser Auto fahren kann, oder nicht? Also erstellen wir wie normal auch im Code einfach die Funktion innerhalb der geschweiften Klammern des Objektes.
+```js
+const auto = {
+    typ: "Kombi",
+    baujahr: "2004",
+    gefahreneKilometer: 400
+    fahren: function() {
+        console.log("Brumm Brumm");
+    }
+};
+```
+Jetzt haben wir die Funktion "fahren" erstellt die beim Aufruf etwas in die Konsole ausgibt.
+Aufrufen tun wir die Funktion genauso wie die Variable in Kombination mit dem Objekt.
+```js
+auto.fahren();
+// Würde "Brumm Brumm" in die Konsole ausgeben.
+```
+
+#### "this" in Funktionen von Objekten
+Jetzt hat unsere Funktion "fahren" ja noch keinen richtigen Sinn, außer das es in der Konsole "Brumm Brumm" ausgibt. Vielleicht wollen wir aber auch die gefahrenen Kilometer damit erhöhen.
+Um das umsetzen zu können, müssen wir als erstes der Funktion einen <a href="#parameter">Parameter</a> übergeben, mit dem wir arbeiten können. Als zweites müssen wir schauen, dass wir die Variable "gefahreneKilometer" dementsprechend ändern können. Anders als außerhalb des Objektes wo wir auto.gefahreneKilometer schreiben müssten, geht das innerhalb des Objektes mit **this**. **this** sagt sozusagen schon aus das es sich auf **dieses** Objekt bezieht.
+Umgesetzt sieht das dann so aus:
+```js
+const auto = {
+    typ: "Kombi",
+    baujahr: "2004",
+    gefahreneKilometer: 400
+    fahren: function(kilometer) {
+        this.gefahreneKilometer += kilometer
+        console.log("Brumm Brumm");
+    }
+};
+```
+Wenn wir also jetzt z.B 50 Kilometer mit dem Auto fahren wollen schreiben wir einfach:
+```js
+auto.fahren(50);
+```
+Damit übergeben wir der Funktion 50 als Kilometer und die werden dann zu "gefahreneKilometer" hinzugerechnet. Bedeutet das nächste mal wenn wir uns "gefahreneKilometer" anschauen steht dort 450.
+```js
+console.log(auto.gefahreneKilometer); // Würde 450 in der Konsole anzeigen
+```
