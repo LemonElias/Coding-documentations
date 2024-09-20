@@ -108,6 +108,38 @@ begin
 end.
 ```
 
+## Enumerierte Typen
+
+### Subranges 
+Wir haben die Möglichkeit Variablen auf einen bestimmten Wertebereich einzuschränken. Nehmen wir z.B einen Test in dem man 100 Punkte maximal erreichen kann. Dann können wir eine Variable mit den Punkten erstellen die nur die Punkte 1 bis 100 beinhalten sollte.
+```pascal
+program Subranges;
+var punkte: 1 .. 100;
+
+begin...
+```
+Das kann helfen Fehler einzugrenzen und zu minimieren und eine bessere Lesbarkeit des Codes zu gewähren, da man direkt ablesen kann welche Werte bzw. welchen Wertebereich die Variable haben soll.
+
+Ein weiteres Beispiel wäre, wenn wir eine Variable wollen die alle Monate des Jahres beinhaltet. Um zu vermeiden das in der Variable irgendein anderer String gespeichert wird, der kein Monat können wir so genannte...
+### Types
+...erstellen. Auch das machen wir im Kopf vom Code und würde mit den Monaten so aussehen:
+```pascal
+program Types;
+type monate = (Januar, Februar, März, April, Mai, Juni, Juli, August, September, Oktober, November, Dezember);
+
+begin...
+```
+Jetzt können wir eine Variable (hier z.B "monat") diesem Typ zuweisen und so weiß der Code, dass die Variable "monate" nur die gegebenen Monate enthalten sollte.
+```pascal
+program Types;
+type monate = (Januar, Februar, Maerz, April, Mai, Juni, Juli, August, September, Oktober, November, Dezember);
+var monat: monate;
+
+begin
+    monat := Januar; // Wäre also zugelassen
+end.
+```
+
 ## Konstante Variablen
 All die oben genannten Variablen lassen sich im Code ändern in dem wir einfach den **Variablennamen** mit einem **:=** und dahinter einem neuen **Wert** schreiben. 
 Beispiel:
