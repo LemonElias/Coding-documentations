@@ -188,7 +188,7 @@ program if-anweisung-mit-integer;
 var zahl: Integer;
 
 begin
-    zahl := 5
+    zahl := 5;
 
     if zahl > 10 then
     begin
@@ -202,11 +202,11 @@ Wenn wir aber trotzdem etwas ausführen wollen um z.B zu zeigen, dass 5 eben nic
 ## Else-Anweisungen
 ..benutzen. Dabei schreiben wir einen Codeblock der nur ausgeführt wird, wenn die Bedingung darüber nicht zutrifft. 
 ```pascal
-program if-anweisung-mit-integer;
+program else-anweisung;
 var zahl: Integer;
 
 begin
-    zahl := 5
+    zahl := 5;
 
     if zahl > 10 then
     begin
@@ -219,3 +219,27 @@ begin
 end.
 ```
 Sollte aber die Bedingung bei **if** zutreffen, dann wird der Codeblock in **else** nie ausgeführt und übersprungen.
+
+## Logische Operatoren
+Wenn wir mehr als eine Bedingung testen wollen in einer einzelnen If-Anweisung, dann können wir das machen, indem wir zwischen die beiden Bedingungen ein **and** schreiben. 
+Nehmen wir also an wir wollen in eine Bar die **ab 18 Jahren** ist aber natürlich muss die Bar auch **geöffnet sein** damit man dort rein kann. 
+Also haben wir die Möglichkeit einmal eine Variable it dem Alter (Integer) und einmal eine Variable mit geöffnet (Boolean) zu checken. Wichtig dabei ist, dass die einzelnen Bedingungen in Klammern () geschrieben sind.
+```pascal
+program and-operator;
+var alter: Integer;
+var geöffnet: Boolean;
+
+begin
+    alter := 18;
+    geöffnet: false;
+
+    if (alter >= 18) and (geöffnet = true) then
+    begin
+        // Anweisung würde übersprungen werden, da alter zwar passt, aber geöffnet nicht true ist
+    end 
+    else
+    begin
+        // Anweisung wird ausgeführt, da nicht beide Bedingungen erfüllt sind
+    end;
+end.
+```
