@@ -243,3 +243,68 @@ begin
     end;
 end.
 ```
+
+# Case-Anweisungen
+Ähnlich wie bei <a href="#if-anweisungen">If-Anweisungen</a> können wir auch hier bestimmte Bedingungen überprüfen. In Case-Anweisungen haben wir die Möglichkeit mehrere genauere Fälle aufeinmal zu überprüfen und anhand der Fälle verschiedene Anweisungen ausführen zu lassen. 
+Fälle die auftreten können währen z.B:
+1. "ist die Zahl 4" **4:**
+2. "ist die Zahl entweder 5 oder 7" **5, 7:**
+3. "ist die Zahl zwischen 1 und 3" **1 .. 3:**
+
+Umgesetzt in Code sieht das wie folgt aus:
+```pascal
+program case-anweisungen;
+var zahl1: Integer;
+
+begin
+    zahl := 7;
+
+    case zahl of
+        4: // Anweisung wenn die Zahl 4 ist 
+        5, 7: // Anweisung wenn die Zahl entweder 5 oder 7 ist
+        1 .. 3: //Anweisung wenn die Zahl zwischen 1 und 3 ist
+    end;
+end.
+```
+Auch das können wir mit einer <a href="#else-anweisungen">Else-Anweisung</a> verbinden. Diese tritt ein wenn die Zahl weder 4, noch 5 oder 7, noch zwischen 1 und 3 ist.
+```pascal
+program case-anweisungen-mit-else;
+var zahl1: Integer;
+
+begin
+    zahl := 10;
+
+    case zahl of
+        4: // Anweisung wenn die Zahl 4 ist 
+        5, 7: // Anweisung wenn die Zahl entweder 5 oder 7 ist
+        1 .. 3: //Anweisung wenn die Zahl zwischen 1 und 3 ist
+    else
+        begin
+            // Anweisung wird ausgeführt da "zahl" keine von den oben genannten Fällen erfüllt
+        end;
+    end;
+end.
+```
+Ein weiteres Beispiel wäre z.B wenn wir einen Bustaben darauf prüfen wollen ob er ein **Groß-** Bustabe ist oder ein **Klein-** Bustabe. Hier zu können wir:
+1. **Großbustaben:** 'A' .. 'Z'
+oder 
+2. **Kleinbustaben:** 'a' .. 'z'
+
+verwenden.
+```pascal
+program case-anweisungen-für-bustaben;
+var bustabe: string;
+
+begin
+    bustabe := 'b';
+
+    case zahl of
+        'A' .. 'Z': // Anweisung wenn Großbustabe
+        'a' .. 'z': // Anweisung wenn Kleinbustabe
+    else
+        begin
+            // Anweisung wenn der String keinem Bustaben entspricht
+        end;
+    end;
+end.
+```
