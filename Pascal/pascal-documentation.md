@@ -251,7 +251,7 @@ Fälle die auftreten können währen z.B:
 2. "ist die Zahl entweder 5 oder 7" **5, 7:**
 3. "ist die Zahl zwischen 1 und 3" **1 .. 3:**
 
-Umgesetzt in Code sieht das wie folgt aus:
+Umgesetzt in <span id=#case-mit-zahlen>Code</span> sieht das wie folgt aus:
 ```pascal
 program case-anweisungen;
 var zahl1: Integer;
@@ -269,7 +269,7 @@ end.
 Auch das können wir mit einer <a href="#else-anweisungen">Else-Anweisung</a> verbinden. Diese tritt ein wenn die Zahl weder 4, noch 5 oder 7, noch zwischen 1 und 3 ist.
 ```pascal
 program case-anweisungen-mit-else;
-var zahl1: Integer;
+var zahl: Integer;
 
 begin
     zahl := 10;
@@ -298,7 +298,7 @@ var bustabe: string;
 begin
     bustabe := 'b';
 
-    case zahl of
+    case bustabe of
         'A' .. 'Z': // Anweisung wenn Großbustabe
         'a' .. 'z': // Anweisung wenn Kleinbustabe
     else
@@ -308,3 +308,90 @@ begin
     end;
 end.
 ```
+
+# Arbeiten mit der Konsole
+Jetzt haben wir zwei Beispiele in dem es Praktisch wäre mit dem User direkt kommunizieren zu können. Dafür gibt es bestimmte Befehle um bestimmte Sachen dem User ausgeben zu lassen oder sogar Eingaben vom User zuzulassen. 
+Wichtig ist, dass die Konsole dafür so lange offen bleibt bis der User diese manuell schließt. Dazu gibt es eine Erweiterung namens **crt** die ihr im Kopf des Codes mit **uses** hinzufügen könnt.
+```pascal
+program erweiterung;
+uses crt;
+
+begin...
+```
+Damit haben wir die Möglichkeit am Ende des Codes die Methode **readkey** zu benutzen. Damit bleibt die Konsole so lange offen bis der Benutzer diese mit "Enter" schließt.
+Um nun die Konsole effektiv zu nutzen gibt es folgene Befehle:
+
+## Write und Writeln
+Mit diesen Methoden haben wir die Möglichkeit Strings, Zahlen oder auch Variablen auszugeben.
+Das kann uns helfen bestimmte Informationen an den Benutzer zurückgeben zu können.
+
+Mit **Write** haben wir die Möglichkeit in der Konsole Sachen auszugeben ohne einen Zeilenumbruch zu erzwingen.
+Mit **Writeln** nimmt unsere Ausgabe eine komplette Reihe ein und erzwingt somit einen Zeilenumbruch.
+**Write** Beispiel:
+```pascal
+write('Hallo');
+write('Welt');
+```
+Ausgabe:
+```pascal
+HalloWelt
+```
+**Writeln** Beispiel:
+```pascal
+writeln('Hallo')
+writeln('Welt');
+```
+Ausgabe:
+```pascal
+Hallo
+Welt
+```
+
+Nun haben wir also die Möglichkeit auch eine Variable mit der Methode **write** oder **writeln** ausgeben zu können.
+```pascal
+program variable-in-write;
+var name: string;
+
+begin
+    name := 'Lukas';
+    write(name)
+end.
+```
+Dann währe die Ausgabe wie folgt:
+```pascal
+Lukas
+```
+
+Wollen wir die Variable in der Ausgabe dann mit einem String kombinieren können wir das auch machen indem wir String und Variable mit einem Komma trennen. 
+Siehe hier:
+```pascal
+program variable-in-write-mit-string;
+var name: string;
+
+begin
+    name := 'Lukas';
+    write('Mein Name ist ', name)
+end.
+```
+Dann währe die Ausgabe wie folgt:
+```
+Mein Name ist Lukas
+```
+
+Wenn wir jetzt das <a href="#case-anweisungen">Case Beispiel</a> von oben richtig umsetzen wollen, indem wir dem Benutzer ausgeben welchen **Case** er erwischt hat, können wir dieses auch mit **write** umsetzen.
+
+![zahlenCheckerGif](/Pascal/pascal-img/zahlenChecker.gif)
+
+Wie ihr seht öffnet sich für den Benutzer eine Konsole in der dann die Ausgabe erfüllt.
+
+## Read and Readln
+Mit diesen Methoden können wir wieder mit dem Benutzer interagieren. Anstatt ihm dennoch eine Ausgabe zu bieten, nehmen wir vom Benutzer eine Eingabe mit der wir dann im Programm arbeiten können. 
+Auch hier gilt wieder:
+**Read** ohne einen Zeilenumbruch
+**Readln** mit einen Zeilenumbruch
+
+Um die Eingabe des Benutzers speichern zu können brauchen wir eine Variable die wir in die Klammern hinter **read/readln** schreiben.
+
+Wenn wir jetzt das <a href="#case-anweisungen">Case Beispiel</a> von oben richtig umsetzen wollen, das der Benutzer einen Bustaben eingeben kann und wir dann checken ob dieser ein Groß- oder Kleinbustabe ist können wir **read/readln** benutzen. 
+
+![bustabenCheckerGif](/Pascal/pascal-img/bustabenChecker.gif)
