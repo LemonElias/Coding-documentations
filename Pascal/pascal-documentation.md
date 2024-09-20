@@ -156,7 +156,9 @@ const name = 'Tom'; // Somit ist die Variable "name" konstant und der Wert 'Tom'
 begin...
 ```
 
-# If-Anweisungen
+# If-Else-Anweisungen
+
+## If-Anweisungen
 Mit **If-Anweisungen** können wir bestimmten Code nur ausführen wenn die gestellte Bedingung gegeben ist. Ansonsten wird der Code innerhalb der **If-Anweisung** übersprungen.
 ```pascal
 program if-anweisungen;
@@ -166,7 +168,9 @@ begin
     istRichtig := false;
 
     if istRichtig = false then
+    begin
         // Anweisung
+    end;
 end.
 ```
 So wird die **Anweisung** nur ausgeführt wenn die Variable "istRichtig" den Wert "Falsch" hat. 
@@ -176,6 +180,7 @@ Für **If-Anweisungen** gibt es nebem dem **ist gleich (=)** Vergleich noch ein 
 2. "kleiner als" <
 3. "größer oder gleich als" >=
 4. "kleiner oder gleich als" <=
+5. "ist nicht gleich wie" <>
 
 Um ein weiteres Beispiel anzuführen, gäbe es z.B noch die Möglichkeit eine Variable mit einem Integer darauf zu vergleich ob der gegebene Integer kleiner ist als ein anderer Integer.
 ```pascal
@@ -186,6 +191,31 @@ begin
     zahl := 5
 
     if zahl > 10 then
+    begin
         // Anweisung
+    end;
 end.
 ```
+Die Anweisung würde jetzt nicht ausgeführt werden, da 5 nicht größer ist als 10.
+
+Wenn wir aber trotzdem etwas ausführen wollen um z.B zu zeigen, dass 5 eben nicht größer als 10 ist können wir..
+## Else-Anweisungen
+..benutzen. Dabei schreiben wir einen Codeblock der nur ausgeführt wird, wenn die Bedingung darüber nicht zutrifft. 
+```pascal
+program if-anweisung-mit-integer;
+var zahl: Integer;
+
+begin
+    zahl := 5
+
+    if zahl > 10 then
+    begin
+        // Anweisung
+    end // Wichtig, dass dieses end ohne ; sein muss
+    else
+    begin
+        // Anweisung die ausgeführt wird, da 5 nicht größer als 10 ist
+    end;
+end.
+```
+Sollte aber die Bedingung bei **if** zutreffen, dann wird der Codeblock in **else** nie ausgeführt und übersprungen.
