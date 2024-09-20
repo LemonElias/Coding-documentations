@@ -108,6 +108,22 @@ begin
 end.
 ```
 
+## Konstante Variablen
+All die oben genannten Variablen lassen sich im Code ändern in dem wir einfach den **Variablennamen** mit einem **:=** und dahinter einem neuen **Wert** schreiben. 
+Beispiel:
+```pascal
+name := 'Tom'; // Hier hat die Variable "name" noch den Wert 'Tom'
+name := 'Lukas'; // Ab hier hat die Variable "name" den Wert 'Lukas'
+```
+
+Wollen wir nun vermeiden, dass man Variablen im Code ändern kann gibt es sogenannte **konstante** Variablen. Diese werden auch im Kopf des Programmes deklariert nur verwenden wir statt dem **var** ein **const**.
+```pascal
+program Konstante;
+const name = 'Tom'; // Somit ist die Variable "name" konstant und der Wert 'Tom' kann nicht geändert werden 
+
+begin...
+```
+
 # If-Anweisungen
 Mit **If-Anweisungen** können wir bestimmten Code nur ausführen wenn die gestellte Bedingung gegeben ist. Ansonsten wird der Code innerhalb der **If-Anweisung** übersprungen.
 ```pascal
