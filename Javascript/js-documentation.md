@@ -625,3 +625,41 @@ Damit übergeben wir der Funktion 50 als Kilometer und die werden dann zu "gefah
 ```js
 console.log(auto.gefahreneKilometer); // Würde 450 in der Konsole anzeigen
 ```
+
+### JSON Objekte
+Um Objekte lesbarer zu machen und somit einen leichteren Austausch zwischen verschiedenen Webservern sicherstellen zu können, haben wir die Möglichkeit **(JS) Objekte** in **JSON-Objekte** zu formatieren. Das ist sinnvoll wenn man einen einfachen Datenaustausch haben möchte oder um Daten für z.B Benutzer einfacher und mit weniger Speicher in einer Konfigurationsdatei speichern möchte.
+
+Der Unterschied zwischen einem JS-Objekt und einem JSON-Objekt ist, dass die Variablen in Strings umgewandet werden. JSON ist eine **textbasierte Darstellung**.
+Die Methode dafür heißt **stringify**. Einfach zu merken wegen Variablen zu strings ändern.
+Vor der Methodem muss **JSON** stehenn weil wir uns darauf beziehen.
+```js
+const textbasiert = JSON.stringify();
+```
+Hier speichern wir also die textbasierte Variante eines Objekts in die Variable "textbasiert".
+Wichtig dabei ist das bei einem textbasiertem Objekt keine Funktionen der Art übergeben werden können. Daher müssen wir nochmal unser Objekt Auto vom Anfang nehmen.
+```js
+const auto = {
+    typ: "SUV",
+    baujahr: "2004",
+    gefahreneKilometer: 400
+};
+
+const textbasiert = JSON.stringify(auto);
+```
+Während "auto" normal so aussah:
+```js
+{typ: 'SUV', baujahr: '2004', gefahreneKilometer: 400}
+```
+Sieht "auto" jetzt textbasiert so aus:
+```js
+{"typ": 'SUV', "baujahr": '2004', "gefahreneKilometer": 400}
+```
+
+Wollen wir nun nach dem Datenaustausch das Objekt wieder normal herstellen um darauf zugreifen zu können, können wir das textbasierte JSON-Objekt wieder zu einem JS-Objekt umwandeln. Die Methode heißt **parse** und wird genauso angewendet wie die **stringify** Methode.
+```js
+const auto = JSON.parse(textbasiert);
+```
+Somit wäre das Objekt "auto" wie davor:
+```js
+{typ: 'SUV', baujahr: '2004', gefahreneKilometer: 400}
+```
