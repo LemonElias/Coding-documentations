@@ -145,7 +145,7 @@ All die oben genannten Variablen lassen sich im Code ändern in dem wir einfach 
 Beispiel:
 ```pascal
 name := 'Tom'; // Hier hat die Variable "name" noch den Wert 'Tom'
-name := 'Lukas'; // Ab hier hat die Variable "name" den Wert 'Lukas'
+name := 'Leon'; // Ab hier hat die Variable "name" den Wert 'Leon'
 ```
 
 Wollen wir nun vermeiden, dass man Variablen im Code ändern kann gibt es sogenannte **konstante** Variablen. Diese werden auch im Kopf des Programmes deklariert nur verwenden wir statt dem **var** ein **const**.
@@ -353,13 +353,13 @@ program variable-in-write;
 var name: string;
 
 begin
-    name := 'Lukas';
+    name := 'Leon';
     write(name)
 end.
 ```
 Dann währe die Ausgabe wie folgt:
 ```pascal
-Lukas
+Leon
 ```
 
 Wollen wir die Variable in der Ausgabe dann mit einem String kombinieren können wir das auch machen indem wir String und Variable mit einem Komma trennen. 
@@ -369,13 +369,13 @@ program variable-in-write-mit-string;
 var name: string;
 
 begin
-    name := 'Lukas';
+    name := 'Leon';
     write('Mein Name ist ', name)
 end.
 ```
 Dann währe die Ausgabe wie folgt:
 ```
-Mein Name ist Lukas
+Mein Name ist Leon
 ```
 
 Wenn wir jetzt das <a href="#case-anweisungen">Case Beispiel</a> von oben richtig umsetzen wollen, indem wir dem Benutzer ausgeben welchen **Case** er erwischt hat, können wir dieses auch mit **write** umsetzen.
